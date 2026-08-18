@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Arquivo Paranormal — Wiki</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Fundo -->
+    <div class="background"></div>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">
+            <span>☠</span>
+            <div>
+                <h1>ARQUIVO PARANORMAL</h1>
+                <p>Uma Wiki de RPG</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#personagens">Personagens</a>
+            <a href="#criaturas">Criaturas</a>
+            <a href="#elementos">Elementos</a>
+            <a href="#casos">Casos</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <main>
+
+        <section id="inicio" class="hero">
+
+            <div class="hero-content">
+
+                <p class="classified">DOCUMENTO CLASSIFICADO</p>
+
+                <h2>
+                    O Outro Lado
+                    <span>está observando.</span>
+                </h2>
+
+                <p class="description">
+                    Bem-vindo ao Arquivo Paranormal. Explore registros,
+                    personagens, criaturas, elementos e acontecimentos
+                    relacionados ao universo de Ordem Paranormal.
+                </p>
+
+                <a href="#personagens" class="button">
+                    EXPLORAR ARQUIVOS
+                </a>
+
+            </div>
+
+            <div class="symbol">
+                ◉
+            </div>
+
+        </section>
+
+        <!-- Pesquisa -->
+        <section class="search-section">
+
+            <h2>Pesquisar nos arquivos</h2>
+
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Digite o nome de um personagem, criatura..."
+                >
+
+                <button onclick="searchWiki()">🔎</button>
+            </div>
+
+            <p id="searchResult"></p>
+
+        </section>
+
+        <!-- Personagens -->
+        <section id="personagens" class="section">
+
+            <div class="section-title">
+                <p>ARQUIVOS // 001</p>
+                <h2>Personagens</h2>
+            </div>
+
+            <div class="cards">
+
+                <article class="card" data-name="agatha">
+                    <div class="card-icon">👁️</div>
+
+                    <div class="card-content">
+                        <span class="tag">AGENTE</span>
+
+                        <h3>Agatha</h3>
+
+                        <p>
+                            Registro de uma investigadora envolvida
+                            com ocorrências paranormais.
+                        </p>
+
+                        <button onclick="openInfo('Agatha')">
+                            VER ARQUIVO →
+                        </button>
+                    </div>
+                </article>
+
+                <article class="card" data-name="agente">
+                    <div class="card-icon">☠️</div>
+
+                    <div class="card-content">
+                        <span class="tag">OPERADOR</span>
+
+                        <h3>Agente Desconhecido</h3>
+
+                        <p>
+                            Identidade protegida. Participação registrada
+                            em múltiplos casos.
+                        </p>
+
+                        <button onclick="openInfo('Agente Desconhecido')">
+                            VER ARQUIVO →
+                        </button>
+                    </div>
+                </article>
+
+                <article class="card" data-name="investigador">
+                    <div class="card-icon">🔦</div>
+
+                    <div class="card-content">
+                        <span class="tag">INVESTIGADOR</span>
+
+                        <h3>Investigador</h3>
+
+                        <p>
+                            Especialista em investigar manifestações
+                            e fenômenos do Outro Lado.
+                        </p>
+
+                        <button onclick="openInfo('Investigador')">
+                            VER ARQUIVO →
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- Criaturas -->
+        <section id="criaturas" class="section">
+
+            <div class="section-title">
+                <p>ARQUIVOS // 002</p>
+                <h2>Criaturas</h2>
+            </div>
+
+            <div class="cards">
+
+                <article class="card creature">
+                    <div class="card-icon">👹</div>
+
+                    <div class="card-content">
+                        <span class="tag red">AMEAÇA</span>
+
+                        <h3>Entidade Paranormal</h3>
+
+                        <p>
+                            Manifestação desconhecida proveniente
+                            do Outro Lado.
+                        </p>
+
+                        <button onclick="openInfo('Entidade Paranormal')">
+                            VER ARQUIVO →
+                        </button>
+                    </div>
+                </article>
+
+                <article class="card creature">
+                    <div class="card-icon">🩸</div>
+
+                    <div class="card-content">
+                        <span class="tag red">PERIGOSO</span>
+
+                        <h3>Manifestação</h3>
+
+                        <p>
+                            Fenômeno capaz de alterar o ambiente
+                            e afetar indivíduos próximos.
+                        </p>
+
+                        <button onclick="openInfo('Manifestação')">
+                            VER ARQUIVO →
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- Elementos -->
+        <section id="elementos" class="section">
+
+            <div class="section-title">
+                <p>ARQUIVOS // 003</p>
+                <h2>Elementos</h2>
+            </div>
+
+            <div class="elements">
+
+                <div class="element">
+                    <span>🩸</span>
+                    <h3>Sangue</h3>
+                    <p>Ligado a emoções intensas e violência.</p>
+                </div>
+
+                <div class="element">
+                    <span>💀</span>
+                    <h3>Morte</h3>
+                    <p>Associado ao fim, tempo e decadência.</p>
+                </div>
+
+                <div class="element">
+                    <span>👁️</span>
+                    <h3>Conhecimento</h3>
+                    <p>Relacionado à informação e percepção.</p>
+                </div>
+
+                <div class="element">
+                    <span>⚡</span>
+                    <h3>Energia</h3>
+                    <p>Representa caos, transformação e instabilidade.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Casos -->
+        <section id="casos" class="section cases">
+
+            <div class="section-title">
+                <p>ARQUIVOS // 004</p>
+                <h2>Casos Paranormais</h2>
+            </div>
+
+            <div class="case-list">
+
+                <div class="case">
+                    <span class="case-number">001</span>
+
+                    <div>
+                        <h3>O Caso da Casa Abandonada</h3>
+                        <p>
+                            Investigação envolvendo fenômenos
+                            inexplicáveis em uma residência isolada.
+                        </p>
+                    </div>
+
+                    <span class="status">ENCERRADO</span>
+                </div>
+
+                <div class="case">
+                    <span class="case-number">002</span>
+
+                    <div>
+                        <h3>Arquivo Sem Nome</h3>
+                        <p>
+                            Informações insuficientes. Investigação
+                            permanece aberta.
+                        </p>
+                    </div>
+
+                    <span class="status open">ABERTO</span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+
+        <div>
+            <h2>ARQUIVO PARANORMAL</h2>
+            <p>
+                Projeto de fã inspirado em Ordem Paranormal RPG.
+            </p>
+        </div>
+
+        <p class="warning">
+            ⚠ Este arquivo pode conter informações sobre o Outro Lado.
+        </p>
+
+        <p class="copyright">
+            © 2026 — Projeto de fã sem fins comerciais.
+        </p>
+
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+
+        <div class="modal-content">
+
+            <button class="close" onclick="closeInfo()">×</button>
+
+            <p>DOCUMENTO CONFIDENCIAL</p>
+
+            <h2 id="modalTitle">Arquivo</h2>
+
+            <div class="line"></div>
+
+            <p id="modalText">
+                Informações do arquivo.
+            </p>
+
+            <button class="modal-button" onclick="closeInfo()">
+                FECHAR ARQUIVO
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
