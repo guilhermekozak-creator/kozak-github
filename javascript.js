@@ -1,52 +1,15 @@
-// Banco simples de informações
-const arquivos = {
-
-    "Agatha": `
-        Agatha é uma personagem registrada nos arquivos da organização.
-        Este espaço pode ser utilizado para colocar informações sobre
-        sua história, habilidades, relações e participação nos casos.
-    `,
-
-    "Agente Desconhecido": `
-        Este arquivo contém informações sobre um agente cuja identidade
-        ainda não foi completamente identificada.
-    `,
-
-    "Investigador": `
-        Investigadores são responsáveis por analisar ocorrências,
-        encontrar pistas e compreender fenômenos paranormais.
-    `,
-
-    "Entidade Paranormal": `
-        Entidade paranormal é o termo utilizado neste projeto para
-        representar manifestações provenientes do Outro Lado.
-    `,
-
-    "Manifestação": `
-        Uma manifestação pode alterar o ambiente e provocar fenômenos
-        que desafiam as explicações convencionais.
-    `
-};
-
-
-// Abrir arquivo
-function openInfo(nome) {
+function openInfo(titulo, texto) {
 
     const modal = document.getElementById("modal");
-    const title = document.getElementById("modalTitle");
-    const text = document.getElementById("modalText");
 
-    title.textContent = nome;
+    document.getElementById("modalTitle").textContent = titulo;
 
-    text.textContent =
-        arquivos[nome] ||
-        "Não existem informações disponíveis neste arquivo.";
+    document.getElementById("modalText").textContent = texto;
 
     modal.classList.add("active");
 }
 
 
-// Fechar arquivo
 function closeInfo() {
 
     document
@@ -56,36 +19,45 @@ function closeInfo() {
 }
 
 
-// Fechar clicando fora
-document.getElementById("modal").addEventListener("click", function(event) {
+document
+    .getElementById("modal")
+    .addEventListener("click", function(event) {
 
-    if (event.target === this) {
-        closeInfo();
-    }
+        if (event.target === this) {
 
-});
+            closeInfo();
+
+        }
+
+    });
 
 
-// Pesquisa
+/* =========================================
+   SISTEMA DE PESQUISA
+========================================= */
+
 function searchWiki() {
 
-    const input =
-        document
+    const input = document
         .getElementById("searchInput")
         .value
         .toLowerCase()
         .trim();
 
-    const cards =
-        document.querySelectorAll(".card");
-
     const result =
         document.getElementById("searchResult");
+
+    const cards =
+        document.querySelectorAll(
+            ".character-card, .element-card, .creature-card"
+        );
 
     if (input === "") {
 
         cards.forEach(card => {
-            card.style.display = "block";
+
+            card.style.display = "";
+
         });
 
         result.textContent = "";
@@ -93,22 +65,19 @@ function searchWiki() {
         return;
     }
 
+
     let encontrados = 0;
 
-    cards.forEach(card => {
 
-        const nome =
-            card.dataset.name || "";
+    cards.forEach(card => {
 
         const texto =
             card.innerText.toLowerCase();
 
-        if (
-            nome.includes(input) ||
-            texto.includes(input)
-        ) {
+        if (texto.includes(input)) {
 
-            card.style.display = "block";
+            card.style.display = "";
+
             encontrados++;
 
         } else {
@@ -119,28 +88,31 @@ function searchWiki() {
 
     });
 
+
     if (encontrados === 0) {
 
         result.textContent =
-            "Nenhum arquivo encontrado.";
+            "Nenhum registro encontrado.";
 
     } else {
 
         result.textContent =
-            `${encontrados} arquivo(s) encontrado(s).`;
+            encontrados +
+            " registro(s) encontrado(s).";
 
     }
 
 }
 
 
-// Pesquisar apertando Enter
 document
     .getElementById("searchInput")
     .addEventListener("keydown", function(event) {
 
         if (event.key === "Enter") {
+
             searchWiki();
+
         }
 
     });

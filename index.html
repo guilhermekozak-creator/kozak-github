@@ -1,345 +1,774 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Arquivo Paranormal — Wiki</title>
+    <title>Arquivo Paranormal | Wiki</title>
 
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- Fundo -->
-    <div class="background"></div>
+<div class="background"></div>
 
-    <!-- Cabeçalho -->
-    <header>
-        <div class="logo">
-            <span>☠</span>
-            <div>
-                <h1>ARQUIVO PARANORMAL</h1>
-                <p>Uma Wiki de RPG</p>
-            </div>
-        </div>
+<header>
 
-        <nav>
-            <a href="#inicio">Início</a>
-            <a href="#personagens">Personagens</a>
-            <a href="#criaturas">Criaturas</a>
-            <a href="#elementos">Elementos</a>
-            <a href="#casos">Casos</a>
-        </nav>
-    </header>
-
-    <!-- Hero -->
-    <main>
-
-        <section id="inicio" class="hero">
-
-            <div class="hero-content">
-
-                <p class="classified">DOCUMENTO CLASSIFICADO</p>
-
-                <h2>
-                    O Outro Lado
-                    <span>está observando.</span>
-                </h2>
-
-                <p class="description">
-                    Bem-vindo ao Arquivo Paranormal. Explore registros,
-                    personagens, criaturas, elementos e acontecimentos
-                    relacionados ao universo de Ordem Paranormal.
-                </p>
-
-                <a href="#personagens" class="button">
-                    EXPLORAR ARQUIVOS
-                </a>
-
-            </div>
-
-            <div class="symbol">
-                ◉
-            </div>
-
-        </section>
-
-        <!-- Pesquisa -->
-        <section class="search-section">
-
-            <h2>Pesquisar nos arquivos</h2>
-
-            <div class="search-box">
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Digite o nome de um personagem, criatura..."
-                >
-
-                <button onclick="searchWiki()">🔎</button>
-            </div>
-
-            <p id="searchResult"></p>
-
-        </section>
-
-        <!-- Personagens -->
-        <section id="personagens" class="section">
-
-            <div class="section-title">
-                <p>ARQUIVOS // 001</p>
-                <h2>Personagens</h2>
-            </div>
-
-            <div class="cards">
-
-                <article class="card" data-name="agatha">
-                    <div class="card-icon">👁️</div>
-
-                    <div class="card-content">
-                        <span class="tag">AGENTE</span>
-
-                        <h3>Agatha</h3>
-
-                        <p>
-                            Registro de uma investigadora envolvida
-                            com ocorrências paranormais.
-                        </p>
-
-                        <button onclick="openInfo('Agatha')">
-                            VER ARQUIVO →
-                        </button>
-                    </div>
-                </article>
-
-                <article class="card" data-name="agente">
-                    <div class="card-icon">☠️</div>
-
-                    <div class="card-content">
-                        <span class="tag">OPERADOR</span>
-
-                        <h3>Agente Desconhecido</h3>
-
-                        <p>
-                            Identidade protegida. Participação registrada
-                            em múltiplos casos.
-                        </p>
-
-                        <button onclick="openInfo('Agente Desconhecido')">
-                            VER ARQUIVO →
-                        </button>
-                    </div>
-                </article>
-
-                <article class="card" data-name="investigador">
-                    <div class="card-icon">🔦</div>
-
-                    <div class="card-content">
-                        <span class="tag">INVESTIGADOR</span>
-
-                        <h3>Investigador</h3>
-
-                        <p>
-                            Especialista em investigar manifestações
-                            e fenômenos do Outro Lado.
-                        </p>
-
-                        <button onclick="openInfo('Investigador')">
-                            VER ARQUIVO →
-                        </button>
-                    </div>
-                </article>
-
-            </div>
-
-        </section>
-
-        <!-- Criaturas -->
-        <section id="criaturas" class="section">
-
-            <div class="section-title">
-                <p>ARQUIVOS // 002</p>
-                <h2>Criaturas</h2>
-            </div>
-
-            <div class="cards">
-
-                <article class="card creature">
-                    <div class="card-icon">👹</div>
-
-                    <div class="card-content">
-                        <span class="tag red">AMEAÇA</span>
-
-                        <h3>Entidade Paranormal</h3>
-
-                        <p>
-                            Manifestação desconhecida proveniente
-                            do Outro Lado.
-                        </p>
-
-                        <button onclick="openInfo('Entidade Paranormal')">
-                            VER ARQUIVO →
-                        </button>
-                    </div>
-                </article>
-
-                <article class="card creature">
-                    <div class="card-icon">🩸</div>
-
-                    <div class="card-content">
-                        <span class="tag red">PERIGOSO</span>
-
-                        <h3>Manifestação</h3>
-
-                        <p>
-                            Fenômeno capaz de alterar o ambiente
-                            e afetar indivíduos próximos.
-                        </p>
-
-                        <button onclick="openInfo('Manifestação')">
-                            VER ARQUIVO →
-                        </button>
-                    </div>
-                </article>
-
-            </div>
-
-        </section>
-
-        <!-- Elementos -->
-        <section id="elementos" class="section">
-
-            <div class="section-title">
-                <p>ARQUIVOS // 003</p>
-                <h2>Elementos</h2>
-            </div>
-
-            <div class="elements">
-
-                <div class="element">
-                    <span>🩸</span>
-                    <h3>Sangue</h3>
-                    <p>Ligado a emoções intensas e violência.</p>
-                </div>
-
-                <div class="element">
-                    <span>💀</span>
-                    <h3>Morte</h3>
-                    <p>Associado ao fim, tempo e decadência.</p>
-                </div>
-
-                <div class="element">
-                    <span>👁️</span>
-                    <h3>Conhecimento</h3>
-                    <p>Relacionado à informação e percepção.</p>
-                </div>
-
-                <div class="element">
-                    <span>⚡</span>
-                    <h3>Energia</h3>
-                    <p>Representa caos, transformação e instabilidade.</p>
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- Casos -->
-        <section id="casos" class="section cases">
-
-            <div class="section-title">
-                <p>ARQUIVOS // 004</p>
-                <h2>Casos Paranormais</h2>
-            </div>
-
-            <div class="case-list">
-
-                <div class="case">
-                    <span class="case-number">001</span>
-
-                    <div>
-                        <h3>O Caso da Casa Abandonada</h3>
-                        <p>
-                            Investigação envolvendo fenômenos
-                            inexplicáveis em uma residência isolada.
-                        </p>
-                    </div>
-
-                    <span class="status">ENCERRADO</span>
-                </div>
-
-                <div class="case">
-                    <span class="case-number">002</span>
-
-                    <div>
-                        <h3>Arquivo Sem Nome</h3>
-                        <p>
-                            Informações insuficientes. Investigação
-                            permanece aberta.
-                        </p>
-                    </div>
-
-                    <span class="status open">ABERTO</span>
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <!-- Rodapé -->
-    <footer>
+    <div class="logo">
+        <div class="logo-symbol">◉</div>
 
         <div>
-            <h2>ARQUIVO PARANORMAL</h2>
-            <p>
-                Projeto de fã inspirado em Ordem Paranormal RPG.
-            </p>
+            <h1>ARQUIVO PARANORMAL</h1>
+            <span>WIKI NÃO OFICIAL</span>
         </div>
+    </div>
 
-        <p class="warning">
-            ⚠ Este arquivo pode conter informações sobre o Outro Lado.
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#universo">Universo</a>
+        <a href="#personagens">Personagens</a>
+        <a href="#elementos">Elementos</a>
+        <a href="#criaturas">Criaturas</a>
+        <a href="#campanhas">Campanhas</a>
+    </nav>
+
+</header>
+
+
+<main>
+
+<!-- ================================================= -->
+<!-- HERO -->
+<!-- ================================================= -->
+
+<section id="inicio" class="hero">
+
+    <div class="hero-image"></div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <p class="classified">
+            DOCUMENTO CONFIDENCIAL // ORDO REALITAS
         </p>
 
-        <p class="copyright">
-            © 2026 — Projeto de fã sem fins comerciais.
+        <h2>
+            O Outro Lado
+            <strong>está observando.</strong>
+        </h2>
+
+        <p>
+            Explore os arquivos sobre o universo de Ordem Paranormal:
+            personagens, criaturas, elementos, organizações, campanhas,
+            locais e acontecimentos.
         </p>
 
-    </footer>
+        <div class="hero-buttons">
 
-    <!-- Modal -->
-    <div id="modal" class="modal">
+            <a href="#universo" class="button">
+                EXPLORAR WIKI
+            </a>
 
-        <div class="modal-content">
-
-            <button class="close" onclick="closeInfo()">×</button>
-
-            <p>DOCUMENTO CONFIDENCIAL</p>
-
-            <h2 id="modalTitle">Arquivo</h2>
-
-            <div class="line"></div>
-
-            <p id="modalText">
-                Informações do arquivo.
-            </p>
-
-            <button class="modal-button" onclick="closeInfo()">
-                FECHAR ARQUIVO
-            </button>
+            <a href="#elementos" class="button secondary">
+                ELEMENTOS
+            </a>
 
         </div>
 
     </div>
 
-    <script src="script.js"></script>
+</section>
+
+
+<!-- ================================================= -->
+<!-- PESQUISA -->
+<!-- ================================================= -->
+
+<section class="search-section">
+
+    <p class="small-title">BANCO DE DADOS</p>
+
+    <h2>Pesquisar nos arquivos</h2>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Pesquise personagens, criaturas, elementos..."
+        >
+
+        <button onclick="searchWiki()">🔎</button>
+
+    </div>
+
+    <p id="searchResult"></p>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- UNIVERSO -->
+<!-- ================================================= -->
+
+<section id="universo" class="section">
+
+    <div class="section-title">
+
+        <p>ARQUIVO // 001</p>
+
+        <h2>O Universo</h2>
+
+    </div>
+
+
+    <div class="universe">
+
+        <div class="universe-text">
+
+            <h3>O Paranormal</h3>
+
+            <p>
+                O universo de Ordem Paranormal apresenta uma realidade
+                aparentemente normal, mas que possui uma dimensão conhecida
+                como <strong>Outro Lado</strong>.
+            </p>
+
+            <p>
+                O Outro Lado é uma dimensão misteriosa que influencia a
+                Realidade através do Medo. Quanto maior a exposição das
+                pessoas ao paranormal, mais a separação entre os dois lados
+                pode ser enfraquecida.
+            </p>
+
+            <p>
+                Rituais, criaturas, manifestações e objetos paranormais
+                são algumas das formas pelas quais o Outro Lado interfere
+                na Realidade.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <div class="info-item">
+                <span>◉</span>
+                <div>
+                    <small>DIMENSÃO</small>
+                    <strong>Outro Lado</strong>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <span>☠</span>
+                <div>
+                    <small>AMEAÇA</small>
+                    <strong>Paranormal</strong>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <span>⚠</span>
+                <div>
+                    <small>ORGANIZAÇÃO</small>
+                    <strong>Ordo Realitas</strong>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- PERSONAGENS -->
+<!-- ================================================= -->
+
+<section id="personagens" class="section dark">
+
+    <div class="section-title">
+
+        <p>ARQUIVO // 002</p>
+
+        <h2>Personagens</h2>
+
+        <span>
+            Alguns dos personagens registrados nos arquivos.
+        </span>
+
+    </div>
+
+
+    <div class="character-grid">
+
+
+        <article class="character-card">
+
+            <img src="img/personagens.jpg" alt="Personagens de Ordem Paranormal">
+
+            <div class="character-info">
+
+                <span class="tag">AGENTE</span>
+
+                <h3>Arthur Cervero</h3>
+
+                <p>
+                    Um dos agentes associados às investigações paranormais
+                    da Ordo Realitas.
+                </p>
+
+                <button onclick="openInfo(
+                    'Arthur Cervero',
+                    'Arthur Cervero é um dos personagens associados ao universo de Ordem Paranormal. Nesta Wiki você pode adicionar sua história, relações, habilidades, aparições e acontecimentos importantes.'
+                )">
+                    VER ARQUIVO →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <article class="character-card">
+
+            <img src="img/agentes.jpg" alt="Agentes">
+
+            <div class="character-info">
+
+                <span class="tag">AGENTE</span>
+
+                <h3>Agatha Volkomenn</h3>
+
+                <p>
+                    Personagem relacionada à Ordo Realitas e aos eventos
+                    de Ordem Paranormal: Desconjuração.
+                </p>
+
+                <button onclick="openInfo(
+                    'Agatha Volkomenn',
+                    'Agatha Volkomenn possui participação nos acontecimentos de Desconjuração. Esta página pode receber informações sobre sua trajetória, relações, habilidades e aparições.'
+                )">
+                    VER ARQUIVO →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <article class="character-card">
+
+            <img src="img/capa.jpg" alt="Arquivo Paranormal">
+
+            <div class="character-info">
+
+                <span class="tag">ORGANIZAÇÃO</span>
+
+                <h3>Ordo Realitas</h3>
+
+                <p>
+                    Organização dedicada a investigar e combater
+                    manifestações paranormais.
+                </p>
+
+                <button onclick="openInfo(
+                    'Ordo Realitas',
+                    'A Ordo Realitas é uma organização voltada ao combate e investigação do paranormal. Adicione aqui informações sobre membros, hierarquia, bases e acontecimentos.'
+                )">
+                    VER ARQUIVO →
+                </button>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- ELEMENTOS -->
+<!-- ================================================= -->
+
+<section id="elementos" class="section">
+
+    <div class="section-title">
+
+        <p>ARQUIVO // 003</p>
+
+        <h2>Elementos do Outro Lado</h2>
+
+        <span>
+            Cinco elementos fundamentais associados às manifestações
+            paranormais.
+        </span>
+
+    </div>
+
+
+    <div class="element-grid">
+
+
+        <article class="element-card blood">
+
+            <img src="img/sangue.jpg" alt="Elemento Sangue">
+
+            <div>
+
+                <span>ELEMENTO</span>
+
+                <h3>Sangue</h3>
+
+                <p>
+                    Associado à intensidade dos sentimentos, como dor,
+                    paixão, ódio, obsessão e outras emoções extremas.
+                </p>
+
+                <button onclick="openInfo(
+                    'Sangue',
+                    'O Sangue representa a intensidade dos sentimentos. Dor, paixão, ódio, obsessão e outras emoções extremas estão associadas a este elemento.'
+                )">
+                    LER MAIS →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <article class="element-card death">
+
+            <img src="img/morte.jpg" alt="Elemento Morte">
+
+            <div>
+
+                <span>ELEMENTO</span>
+
+                <h3>Morte</h3>
+
+                <p>
+                    Relacionada ao tempo, decadência, fim e transformação
+                    da matéria.
+                </p>
+
+                <button onclick="openInfo(
+                    'Morte',
+                    'Morte está relacionada ao tempo, decadência, fim e transformações. Suas manifestações frequentemente apresentam características ligadas a ossos, espirais e lodo preto.'
+                )">
+                    LER MAIS →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <article class="element-card knowledge">
+
+            <img src="img/conhecimento.jpg" alt="Elemento Conhecimento">
+
+            <div>
+
+                <span>ELEMENTO</span>
+
+                <h3>Conhecimento</h3>
+
+                <p>
+                    Ligado à informação, percepção, consciência, símbolos
+                    e compreensão da Realidade.
+                </p>
+
+                <button onclick="openInfo(
+                    'Conhecimento',
+                    'Conhecimento está associado à informação, percepção, consciência, símbolos e comunicação com o Outro Lado.'
+                )">
+                    LER MAIS →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <article class="element-card energy">
+
+            <img src="img/energia.jpg" alt="Elemento Energia">
+
+            <div>
+
+                <span>ELEMENTO</span>
+
+                <h3>Energia</h3>
+
+                <p>
+                    Representa caos, transformação, imprevisibilidade
+                    e instabilidade.
+                </p>
+
+                <button onclick="openInfo(
+                    'Energia',
+                    'Energia representa o caos, transformação e imprevisibilidade. Suas manifestações podem apresentar formas extremamente variadas.'
+                )">
+                    LER MAIS →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <article class="element-card fear">
+
+            <img src="img/medo.jpg" alt="Elemento Medo">
+
+            <div>
+
+                <span>ELEMENTO</span>
+
+                <h3>Medo</h3>
+
+                <p>
+                    Um elemento associado ao desconhecido e às próprias
+                    regras que envolvem o paranormal.
+                </p>
+
+                <button onclick="openInfo(
+                    'Medo',
+                    'O Medo possui uma relação especial com o paranormal e é apresentado como um elemento capaz de transcender diversas regras.'
+                )">
+                    LER MAIS →
+                </button>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- CRIATURAS -->
+<!-- ================================================= -->
+
+<section id="criaturas" class="section dark">
+
+    <div class="section-title">
+
+        <p>ARQUIVO // 004</p>
+
+        <h2>Criaturas</h2>
+
+        <span>
+            Entidades e manifestações registradas.
+        </span>
+
+    </div>
+
+
+    <div class="creature-grid">
+
+
+        <article class="creature-card">
+
+            <img src="img/criatura.jpg">
+
+            <div>
+
+                <span class="danger">AMEAÇA</span>
+
+                <h3>Vulto</h3>
+
+                <p>
+                    Criatura associada ao elemento Conhecimento,
+                    frequentemente relacionada à paranoia e a locais
+                    onde a Membrana está enfraquecida.
+                </p>
+
+                <button onclick="openInfo(
+                    'Vulto',
+                    'Os Vultos são criaturas associadas ao Conhecimento. São manifestações relacionadas à paranoia e ao medo em locais onde a Membrana está enfraquecida.'
+                )">
+                    VER REGISTRO →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <article class="creature-card">
+
+            <img src="img/criatura.jpg">
+
+            <div>
+
+                <span class="danger">AMEAÇA</span>
+
+                <h3>Aberração</h3>
+
+                <p>
+                    Registro destinado a criaturas de grande ameaça
+                    encontradas durante investigações.
+                </p>
+
+                <button onclick="openInfo(
+                    'Criatura Paranormal',
+                    'Esta ficha pode ser personalizada com informações sobre uma criatura específica, incluindo elemento, VD, habilidades, resistências e enigma de medo.'
+                )">
+                    VER REGISTRO →
+                </button>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- CAMPANHAS -->
+<!-- ================================================= -->
+
+<section id="campanhas" class="section">
+
+    <div class="section-title">
+
+        <p>ARQUIVO // 005</p>
+
+        <h2>Campanhas</h2>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-number">01</div>
+
+            <div>
+
+                <span>2019</span>
+
+                <h3>A Ordem Paranormal</h3>
+
+                <p>
+                    A história que deu início ao universo apresentado
+                    nas campanhas de RPG.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-number">02</div>
+
+            <div>
+
+                <span>2020</span>
+
+                <h3>O Segredo na Floresta</h3>
+
+                <p>
+                    Uma investigação envolvendo uma equipe de agentes
+                    enviada para uma pequena cidade.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-number">03</div>
+
+            <div>
+
+                <span>2020 — 2021</span>
+
+                <h3>Desconjuração</h3>
+
+                <p>
+                    Uma das grandes campanhas do universo, expandindo
+                    a história da Ordo Realitas e do paranormal.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-number">04</div>
+
+            <div>
+
+                <span>2022</span>
+
+                <h3>Calamidade</h3>
+
+                <p>
+                    Uma campanha de grande escala envolvendo importantes
+                    acontecimentos relacionados ao Outro Lado.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-number">05</div>
+
+            <div>
+
+                <span>2022</span>
+
+                <h3>O Segredo na Ilha</h3>
+
+                <p>
+                    Uma investigação isolada envolvendo acontecimentos
+                    paranormais em uma ilha.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-number">06</div>
+
+            <div>
+
+                <span>2023</span>
+
+                <h3>Sinais do Outro Lado</h3>
+
+                <p>
+                    Uma nova investigação envolvendo sinais e fenômenos
+                    relacionados ao paranormal.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- AVISO DE SPOILERS -->
+<!-- ================================================= -->
+
+<section class="spoiler">
+
+    <div>
+
+        <span>⚠ ATENÇÃO</span>
+
+        <h2>Este arquivo contém spoilers.</h2>
+
+        <p>
+            Os registros podem revelar acontecimentos importantes
+            das campanhas e da história de Ordem Paranormal.
+        </p>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+    <div class="footer-logo">
+        ◉
+    </div>
+
+    <h2>ARQUIVO PARANORMAL</h2>
+
+    <p>
+        Wiki de fã dedicada ao universo de Ordem Paranormal.
+    </p>
+
+    <div class="footer-line"></div>
+
+    <small>
+        Projeto de fã sem fins comerciais.
+    </small>
+
+</footer>
+
+
+<!-- ================================================= -->
+<!-- MODAL -->
+<!-- ================================================= -->
+
+<div id="modal" class="modal">
+
+    <div class="modal-content">
+
+        <button class="close" onclick="closeInfo()">×</button>
+
+        <span>DOCUMENTO CONFIDENCIAL</span>
+
+        <h2 id="modalTitle">
+            Arquivo
+        </h2>
+
+        <div class="modal-line"></div>
+
+        <p id="modalText">
+            Informações.
+        </p>
+
+        <button
+            class="modal-button"
+            onclick="closeInfo()"
+        >
+            FECHAR ARQUIVO
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
 
 </body>
+
 </html>
